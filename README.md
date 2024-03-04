@@ -1,2 +1,2 @@
-# AIO-Video-Downloader
+# AIO Video Downloader
 Downloads videos from several social media sources
