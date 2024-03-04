@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
--- Sunucu:                       localhost
--- Sunucu sürümü:                10.3.16-MariaDB - mariadb.org binary distribution
--- Sunucu İşletim Sistemi:       Win64
--- HeidiSQL Sürüm:               9.4.0.5125
+-- Server: Localhost
+-- Server version:        10.3.16-MariaDB - mariadb.org binary distribution
+-- Server Operating System:       Win64
+-- SQL version:              9.4.0.5125
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -11,7 +11,7 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- tablo yapısı dökülüyor aio_dl.contents
+
 CREATE TABLE IF NOT EXISTS `contents` (
   `ID` bigint(20) NOT NULL AUTO_INCREMENT,
   `content_type` int(11) NOT NULL DEFAULT 0,
@@ -23,7 +23,6 @@ CREATE TABLE IF NOT EXISTS `contents` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- aio_dl.contents: ~23 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `contents` DISABLE KEYS */;
 INSERT INTO `contents` (`ID`, `content_type`, `content_title`, `content_description`, `content_slug`, `content_text`, `content_opt`) VALUES
 	(1, 0, 'Homepage', 'Homepage content', 'home', '', NULL),
@@ -74,7 +73,7 @@ INSERT INTO `contents` (`ID`, `content_type`, `content_title`, `content_descript
 	(46, 1, 'MXTakatak Video Downloader', 'MXTakatak Video Downloader', 'mxtakatak-video-downloader', NULL, NULL);
 /*!40000 ALTER TABLE `contents` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor aio_dl.downloads
+-- Table Structure Sour Aio_dl.downloads
 CREATE TABLE IF NOT EXISTS `downloads` (
   `ID` bigint(20) NOT NULL AUTO_INCREMENT,
   `download_date` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -84,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `downloads` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- tablo yapısı dökülüyor aio_dl.options
+-- table structure is shed
 CREATE TABLE IF NOT EXISTS `options` (
   `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `option_name` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
@@ -92,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `options` (
   PRIMARY KEY (`option_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- aio_dl.options: ~15 rows (yaklaşık) tablosu için veriler indiriliyor
+-- aio_dl.options: ~15 rows (approximately) table
 /*!40000 ALTER TABLE `options` DISABLE KEYS */;
 INSERT INTO `options` (`option_id`, `option_name`, `option_value`) VALUES
 	(1, 'general_settings', {{general_settings}}),
@@ -114,7 +113,7 @@ INSERT INTO `options` (`option_id`, `option_name`, `option_value`) VALUES
 	(17, 'api_settings', '');
 /*!40000 ALTER TABLE `options` ENABLE KEYS */;
 
--- tablo yapısı dökülüyor aio_dl.proxies
+-- Table Structure Aio_dl.Proxies
 CREATE TABLE IF NOT EXISTS `proxies` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -127,7 +126,6 @@ CREATE TABLE IF NOT EXISTS `proxies` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- tablo yapısı dökülüyor aio_dl.users
 CREATE TABLE IF NOT EXISTS `users` (
   `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_login` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
@@ -141,12 +139,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- aio_dl.users: ~0 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`ID`, `user_login`, `user_pass`, `user_email`, `user_nicename`, `user_url`, `user_activation_key`, `user_level`) VALUES
 	(1, 'admin', '{{admin_pass}}', '{{admin_email}}', '{{admin_name}}', NULL, NULL, 1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
